@@ -2,7 +2,7 @@
 
 GUI::GUI(): lives(3), score(0), level(1)
 {
-	font.loadFromFile("battlev2.ttf");
+	font.loadFromFile("Fonts/battlev2.ttf");
 
 	textLives.setFont(font);
 	textLives.setCharacterSize(20);

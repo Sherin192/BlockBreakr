@@ -2,9 +2,9 @@
 
 Ball::Ball(): minVelocity(300.0f), maxVelocity(320.0f), velocity(300.0f), moveX(0.0f), moveY(0.0f), collision(false)
 {
-	buffer.loadFromFile("sound.wav");
+	buffer.loadFromFile("Sounds/sound.wav");
 	sound.setBuffer(buffer);
-	losebuffer.loadFromFile("losepoint.wav");
+	losebuffer.loadFromFile("Sounds/losepoint.wav");
 	loseLive.setBuffer(losebuffer);
 	load("images/ballBlue.png");
 	getSprite().setOrigin(11, 11);
@@ -33,8 +33,8 @@ void Ball::update(float deltaTime, Paddle *paddle, Block * block, int arSize, in
 			return;
 	}
 
-	/*		moveAmount is the hypotenuse of our triangle the amount that we want to move. We need 
-			to find the lenght of the olther sides of the triangle to know how much to move if each direction*/
+	//moveAmount is the hypotenuse of our triangle the amount that we want to move. We need 
+	//to find the lenght of the olther sides of the triangle to know how much to move if each direction
 	float moveAmount = velocity * deltaTime;
 
 	/*linearVelocityX is the cos(angle) which is equal to the ratio of adjacent/hypotenuse. By multiplying it to 
@@ -207,13 +207,14 @@ bool Ball::collisionAABB(sf::FloatRect bb1, sf::FloatRect bb2,sf::FloatRect &ove
 	}
 	return false;
 }
+
 void Ball::collisionManager(sf::FloatRect overlap, GameObject box)
 {	
 	sf::Vector2f pos1 = box.getPosition();
 	sf::Vector2f pos2 = getPosition();
 	if (overlap.height > overlap.width)					//collision on x axis 
 	{
-			if (pos1.x > pos2.x)						//paddle is more left than ball, collision <--
+			if (pos1.x > pos2.x)
 			{
 				if (angle > 270 || angle < 90)
 				{
@@ -256,7 +257,7 @@ void Ball::collisionManager(sf::FloatRect overlap, GameObject box)
 	}
 	else 
 	{
-		if (pos1.y > pos2.y)						//paddle is more left than ball, collision <--
+		if (pos1.y > pos2.y)
 		{
 			if (pos2.x > pos1.x - box.getBoundingRect().width/2 && pos2.x < pos1.x + box.getBoundingRect().width / 2)
 			{
@@ -267,7 +268,7 @@ void Ball::collisionManager(sf::FloatRect overlap, GameObject box)
 			}
 			else
 			{
-				if (pos1.x > pos2.x && (angle > 270 || angle < 90))						//paddle is more left than ball, collision <--
+				if (pos1.x > pos2.x && (angle > 270 || angle < 90))
 				{
 						bounceOffX();
 						rangeAngle();
@@ -301,7 +302,7 @@ void Ball::collisionManager(sf::FloatRect overlap, GameObject box)
 			}
 			else
 			{
-				if (pos1.x > pos2.x && (angle > 270 || angle < 90))						//paddle is more left than ball, collision <--
+				if (pos1.x > pos2.x && (angle > 270 || angle < 90))
 				{
 					
 						bounceOffX();
@@ -327,24 +328,3 @@ void Ball::collisionManager(sf::FloatRect overlap, GameObject box)
 		}
 	}
 }
-/*
-bool Ball::AABBtoCircleCollision(GameObject block, sf::Vector2f pos)
-{
-	sf::Vector2f halfs(block.getBoundingRect().width / 2, block.getBoundingRect().height / 2);
-	sf::Vector2f difference;
-	sf::Vector2f clamped;
-	sf::Vector2f closest;
-	difference = getPosition() - pos;
-	clamped.x = clamp(difference.x, -halfs.x, halfs.x);
-	clamped.y = clamp(difference.y, -halfs.y, halfs.y);
-
-	closest = clamped + pos;
-
-	difference = closest - getPosition();
-	float lenght = sqrt((difference.x * difference.x) + (difference.y * difference.y));
-
-	return	lenght < radius;
-}
-float Ball::clamp(float value, float min, float max) {
-	return std::max(min, std::min(max, value));
-}*/

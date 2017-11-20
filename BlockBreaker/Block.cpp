@@ -23,11 +23,9 @@ void Block::update()
 		break;
 	case BLUE:
 		getSprite().setTexture(blue);
-		//load("images/element_blue_rectangle_glossy.png");
 		break;
 	case GREEN:
 		getSprite().setTexture(green);
-		//load("images/element_green_rectangle_glossy.png");
 		break;
 	case YELLOW:
 		getSprite().setTexture(yellow);
@@ -37,7 +35,6 @@ void Block::update()
 		break;
 	case RED:
 		getSprite().setTexture(red);
-		//load("images/element_red_rectangle_glossy.png");
 		break;
 	}
 }

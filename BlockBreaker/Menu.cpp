@@ -2,7 +2,7 @@
 
 Menu::Menu()
 {	
-	font.loadFromFile("battlev2.ttf");
+	font.loadFromFile("Fonts/battlev2.ttf");
 
 	tips.setFont(font);
 	tips.setCharacterSize(20);
@@ -58,7 +58,6 @@ Menu::Action Menu::manageMenu(sf::RenderWindow &window)
 			if (event.type == sf::Event::EventType::MouseButtonPressed)
 			{
 				result = handleClick(event.mouseButton.x, event.mouseButton.y);
-				//std::cout << "result " << result << std::endl;
 			}
 			if (event.type == sf::Event::EventType::Closed)
 			{
@@ -75,10 +74,7 @@ Menu::Action Menu::manageMenu(sf::RenderWindow &window)
 			{
 				draw(window);
 				window.draw(tips);
-			}
-			//window.clear(sf::Color::Black);
-			//window.draw(menuObjects.begin()->sprite);
-			//window.draw(sprite);
+			}			
 			if (result != HScores && result != Options)
 				draw(window);
 			window.display();
@@ -112,7 +108,6 @@ void Menu::draw(sf::RenderWindow &window)
 
 	for (it = menuObjects.begin(); it != menuObjects.end(); ++it)
 	{
-		//std::cout << it->action << std::endl;
 		window.draw(it->sprite);
 	}
 }
@@ -145,15 +140,10 @@ void Menu::showHscores(sf::RenderWindow &window)
 				scores >> score;
 				text[i].setString(score);
 				text[i].setPosition(InitXposition + ofsetX, InitYposition + ((i - 1) * ofsetY));
-			}
-
-			
-			
-			
+			}		
 			window.draw(text[i]);
 			i++;
 		}
-	
 	}
 	scores.close();
 	

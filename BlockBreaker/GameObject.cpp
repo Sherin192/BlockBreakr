@@ -1,12 +1,10 @@
 #include "GameObject.h"
 
 GameObject::GameObject(): isLoaded(false)
-{
-	
+{	
 }
 GameObject::~GameObject()
 {
-
 }
 
 void GameObject::load(std::string fileName)
@@ -15,12 +13,11 @@ void GameObject::load(std::string fileName)
 	{
 		sprite.setTexture(texture);
 		isLoaded = true;
-	}
-		
+	}		
 }
+
 void GameObject::update()
 {
-
 }
 
 void GameObject::draw(sf::RenderWindow &window)

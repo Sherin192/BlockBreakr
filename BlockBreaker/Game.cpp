@@ -15,7 +15,7 @@ Game::~Game()
 
 void Game::init()
 {
-	music.openFromFile("level2.ogg");
+	music.openFromFile("Sounds/level2.ogg");
 	music.setLoop(true);
 
 	textureBg.loadFromFile("images/bg.jpg");
