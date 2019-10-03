@@ -3,9 +3,6 @@
 GameObject::GameObject(): isLoaded(false)
 {	
 }
-GameObject::~GameObject()
-{
-}
 
 void GameObject::load(std::string fileName)
 {

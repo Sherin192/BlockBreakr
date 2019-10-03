@@ -47,8 +47,6 @@ GUI::GUI(): lives(3), score(0), level(1)
 	textMessage.setString("Pause");
 
 }
-GUI::~GUI()
-{}
 
 void GUI::update()
 {

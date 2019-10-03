@@ -9,7 +9,6 @@ class Menu
 public:
 	enum Action { Nothing, Play, HScores, Options, Exit };
 	Menu();
-	~Menu();
 	Action manageMenu(sf::RenderWindow &window);
 	Action handleClick(int x, int y);
 	void draw(sf::RenderWindow & window);

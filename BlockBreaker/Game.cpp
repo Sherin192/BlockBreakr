@@ -9,9 +9,6 @@ Game::Game(): exit(false), pause(false)
 	init();
 }
 
-Game::~Game()
-{
-}
 
 void Game::init()
 {
@@ -50,7 +47,6 @@ void Game::gameLoop()
 	case PLAY:
 		if (event.type == sf::Event::Closed)
 			gameState = ENDSCREEEN;
-			//exit = true;
 		deltaTime = ElapsedTime.restart().asSeconds();
 		
 		ball->update(deltaTime, paddle, &blocks[0], BLOCK_NUMBER, gui.getScore(), gui.getLives());
@@ -109,7 +105,6 @@ void Game::gameLoop()
 	case HIGHTSCORES:
 		break;
 	case ENDSCREEEN:
-		//gui.gameOver(window);
 		delete[] blocks;
 		delete ball;
 		delete paddle;
@@ -282,7 +277,7 @@ void Game::setlevel()
 {
 	if (level == ONE)
 	{
-		music.openFromFile("level1.ogg");
+		music.openFromFile("Sounds/level1.ogg");
 		level = TWO;
 	}
 	else if (level == TWO)

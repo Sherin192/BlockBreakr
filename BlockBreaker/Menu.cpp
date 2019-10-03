@@ -43,9 +43,7 @@ Menu::Menu()
 	menuObjects.push_back(options);
 	menuObjects.push_back(exit);
 }
-Menu::~Menu()
-{
-}
+
 
 Menu::Action Menu::manageMenu(sf::RenderWindow &window)
 {

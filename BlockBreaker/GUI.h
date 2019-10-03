@@ -33,7 +33,6 @@ class GUI
 
 public:
 	GUI();
-	~GUI();
 	void gameOver(sf::RenderWindow &window);
 	void showNameOnScreen(sf::RenderWindow &window, std::string name);
 	void loadScoreFromFile();

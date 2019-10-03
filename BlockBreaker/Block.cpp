@@ -11,9 +11,6 @@ Block::Block()
 	getSprite().setOrigin(BLOCK_WIDTH / 2, BLOCK_HEIGHT / 2);
 }
 
-Block::~Block()
-{}
-
 void Block::update()
 {
 	switch (blockState)

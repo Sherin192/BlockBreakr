@@ -70,14 +70,7 @@ class Game
 	void setScore();		
 	void updateBlocks();
 	bool drawBlocks();
-	float SweptAABB(Ball& b1, GameObject& b2, float& normalx, float& normaly);
-	void manageCollision(Ball& b1, GameObject& b2);
 public:
 	Game();
-	~Game();
-
-	
-
-
 };
 #endif

@@ -16,7 +16,7 @@ private:
 	std::string fileName;
 public:
 	GameObject();
-	virtual ~GameObject();
+	virtual ~GameObject() = default;
 
 	void virtual load(std::string fileName);
 	void virtual update();

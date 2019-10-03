@@ -9,7 +9,6 @@ class Paddle : public GameObject
 	float maxVelocity;
 public:
 	Paddle();
-	~Paddle();
 	void update(float deltaTime);
 	float getVelocity();
 };

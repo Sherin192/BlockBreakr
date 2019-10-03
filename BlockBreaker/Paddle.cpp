@@ -6,10 +6,7 @@ Paddle::Paddle(): velocity(0.0f), maxVelocity(250.0f)
 	getSprite().setOrigin(52, 12);
 	getSprite().setPosition(400, 550);
 }
-Paddle::~Paddle()
-{
 
-}
 void Paddle::update(float deltaTime)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))

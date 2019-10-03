@@ -18,9 +18,6 @@ Ball::Ball(): minVelocity(300.0f), maxVelocity(320.0f), velocity(300.0f), moveX(
 	while (angle < 240 || angle > 300);
 }
 
-Ball::~Ball()
-{}
-
 void Ball::update(float deltaTime, Paddle *paddle, Block * block, int arSize, int &score, int &lives)
 {
 	if (!start)

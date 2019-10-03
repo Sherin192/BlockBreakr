@@ -14,10 +14,8 @@ class Block : public GameObject
 {
 	
 	Color blockState;
-	//sf::Vector2f position;
 public:
 	Block();
-	~Block();
 
 	sf::Texture grey, blue, green, yellow, purple, red;
 	void setBlockState(Color state) { blockState = state;};

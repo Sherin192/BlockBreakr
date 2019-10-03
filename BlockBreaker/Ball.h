@@ -6,8 +6,6 @@
 #include "Block.h"
 #include "Paddle.h"
 
-//#include "Game.h"
-
 class Ball : public GameObject
 {
 	sf::SoundBuffer buffer;
@@ -15,7 +13,6 @@ class Ball : public GameObject
 	sf::Sound sound;
 	sf::Sound loseLive;
 
-	float radius;
 	float velocity;
 	const float maxVelocity;
 	const float minVelocity;
@@ -30,8 +27,6 @@ class Ball : public GameObject
 	
 	bool collisionAABB(sf::FloatRect bb1, sf::FloatRect bb2, sf::FloatRect &overlap);
 	void collisionManager(sf::FloatRect overlap, GameObject box);
-	//bool AABBtoCircleCollision(GameObject block, sf::Vector2f pos, sf::Vector2f &closest);
-	//float clamp(float value, float min, float max);
 	void rangeAngle() {
 		if (angle < 0.0f) angle += 360.0f;
 		if (angle > 360.0f) angle -= 360.0f;
@@ -40,7 +35,6 @@ class Ball : public GameObject
 	void bounceOffY() { angle = 360.0f - angle; }
 public:
 	Ball();
-	~Ball();
 
 	float linearVelocityX(float angle);
 	float linearVelocityY(float angle);
